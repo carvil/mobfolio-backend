@@ -2,3 +2,5 @@
 *.log
 
 log/development.log
+
+*.pid
