@@ -9,5 +9,6 @@ gem 'devise'
 
 group :development, :test do
   gem 'spring'
+  gem 'pry'
 end
 
