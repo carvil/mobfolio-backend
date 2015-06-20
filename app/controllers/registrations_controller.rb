@@ -1,10 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :expose
-
+  skip_filter :authenticate_user_from_token!, only: [:create]
   respond_to :json
-
-  def expose
-    puts params.inspect
-    true
-  end
 end

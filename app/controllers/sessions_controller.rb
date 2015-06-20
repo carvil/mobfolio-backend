@@ -1,4 +1,5 @@
 class SessionsController < Devise::SessionsController
+  skip_filter :authenticate_user_from_token!, only: [:create]
   respond_to :json
 
   def create
