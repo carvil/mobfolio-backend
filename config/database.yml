@@ -76,10 +76,6 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: mobfolio-backend_production
-  username: mobfolio-backend
-  password: <%= ENV['MOBFOLIO-BACKEND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
