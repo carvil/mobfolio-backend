@@ -5,4 +5,8 @@ Rails.application.routes.draw do
     sessions: 'sessions',
     registrations: 'registrations'
   }
+
+  resource :home, only: [ :index ]
+  root 'home#index'
+
 end
