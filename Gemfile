@@ -7,6 +7,7 @@ gem 'devise', '3.5.1'
 # Production
 group :production do
   gem 'unicorn'
+  gem 'rails_12factor'
 end
 
 gem 'foreman'
