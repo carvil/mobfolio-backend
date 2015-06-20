@@ -122,6 +122,3 @@ DEPENDENCIES
   pry
   rails (= 4.2.1)
   spring
-
-BUNDLED WITH
-   1.10.3
