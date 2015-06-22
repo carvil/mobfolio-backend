@@ -16,5 +16,6 @@ gem 'newrelic_rpm'
 group :development, :test do
   gem 'spring'
   gem 'pry'
+  gem 'rspec-rails'
 end
 
