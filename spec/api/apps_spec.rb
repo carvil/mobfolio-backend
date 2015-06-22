@@ -32,7 +32,7 @@ RSpec.describe 'Managing apps', type: :request do
       post '/apps', { app: { fake: 'fake' } }, api_headers
 
       expect(response.status).to eq 400
-      expect(response.body).to include("Name can't be blank")
+      expect(response.body).to include("can't be blank")
     end
 
     it 'is not possible to view a nonexistent app' do

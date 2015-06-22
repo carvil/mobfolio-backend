@@ -21,7 +21,7 @@ class AppsController < ApplicationController
     if app.save
       render json: { app: app.as_json }, status: 201
     else
-      render json: app.errors.to_a, status: :bad_request
+      render json: app.errors, status: :bad_request
     end
   end
 
