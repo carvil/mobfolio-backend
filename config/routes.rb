@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :apps, only: [ :update, :index, :show, :create ]
+  resources :apps
 
   devise_for :users, controllers: {
     sessions: 'sessions',

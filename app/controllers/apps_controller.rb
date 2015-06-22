@@ -22,6 +22,12 @@ class AppsController < ApplicationController
     render json: { app: app.as_json }, status: 201
   end
 
+  def destroy
+    app = current_user.apps.find(params[:id])
+    app.destroy
+    head 200
+  end
+
   private
 
   def app_params
