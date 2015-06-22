@@ -11,6 +11,7 @@ group :production do
 end
 
 gem 'foreman'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'spring'
