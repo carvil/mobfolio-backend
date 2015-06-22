@@ -18,8 +18,11 @@ class AppsController < ApplicationController
   def create
     app = App.new(app_params)
     app.user = current_user
-    app.save
-    render json: { app: app.as_json }, status: 201
+    if app.save
+      render json: { app: app.as_json }, status: 201
+    else
+      render json: app.errors.to_a, status: :bad_request
+    end
   end
 
   def destroy
