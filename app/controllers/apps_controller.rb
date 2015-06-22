@@ -25,7 +25,7 @@ class AppsController < ApplicationController
   def destroy
     app = current_user.apps.find(params[:id])
     app.destroy
-    head 200
+    head 204
   end
 
   private
