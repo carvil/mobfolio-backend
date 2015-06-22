@@ -3,7 +3,20 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user_from_token!
 
+  rescue_from ActionController::ParameterMissing do |exception|
+    json_error(exception.message, :bad_request)
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    json_error 'Record not found', :not_found
+  end
+
   private
+
+  def json_error(message, status)
+    body = { message: message }
+    render json: body, status: status
+  end
 
   def authenticate_user_from_token!
     authenticate_or_request_with_http_token do |token, options|
